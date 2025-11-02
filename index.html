@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VerdhanOS v2.4 — Ethereal</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=SUSE+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+<body>
+  <!-- ===== Boot Screen ===== -->
+  <div id="bootScreen">
+    <p>VerdhanOS v2.4 — Initializing creative modules...</p>
+  </div>
+
+  <!-- ===== Wallpaper ===== -->
+  <video autoplay muted loop id="videoWallpaper">
+    <source src="assets/wallpapers/wallpaper.mp4" type="video/mp4" />
+  </video>
+  <img id="mobileWallpaper" src="assets/wallpapers/wallpaper-mobile.jpg" alt="Mobile Wallpaper" />
+
+  <!-- ===== Desktop Icons ===== -->
+  <div class="desktop-icons">
+    <div class="icon" onclick="openWindow('artWindow')">
+      <img src="assets/icons/icon-art.png" alt="Art Folder" />
+      <span>Art</span>
+    </div>
+    <div class="icon" onclick="openWindow('experimentationWindow')">
+      <img src="assets/icons/icon-experiment.png" alt="Experimentation Folder" />
+      <span>Lab</span>
+    </div>
+    <div class="icon" onclick="openWindow('aboutWindow')">
+      <img src="assets/icons/icon-about.png" alt="About Me" />
+      <span>About</span>
+    </div>
+    <div class="icon" onclick="openWindow('notepadWindow')">
+      <img src="assets/icons/icon-notepad.png" alt="Notepad" />
+      <span>Notes</span>
+    </div>
+    <div class="icon" onclick="openWindow('projectsWindow')">
+      <img src="assets/icons/icon-projects.png" alt="Projects Folder" />
+      <span>Projects</span>
+    </div>
+    <div class="icon" onclick="openWindow('sketchesWindow')">
+      <img src="assets/icons/icon-sketches.png" alt="sketches" />
+      <span>sketches</span>
+    </div>
+  </div>
+
+  <!-- ===== Windows ===== -->
+  <!-- Art Window -->
+  <div class="window" id="artWindow">
+    <div class="window-header">
+      <span>Art</span>
+      <button onclick="closeWindow('artWindow')">✕</button>
+    </div>
+    <div class="window-content">
+      <div class="image-grid">
+        <img src="assets/art/art1.png" alt="Artwork 1" />
+        <img src="assets/art/art2.png" alt="Artwork 2" />
+        <img src="assets/art/art3.png" alt="Artwork 3" />
+        <img src="assets/art/art4.png" alt="Artwork 4" />
+        <img src="assets/art/art5.png" alt="Artwork 5" />
+        <img src="assets/art/art6.png" alt="Artwork 6" />
+        <img src="assets/art/art7.png" alt="Artwork 7" />
+        <img src="assets/art/art8.png" alt="Artwork 8" />
+      </div>
+    </div>
+  </div>
+
+  <!-- Experimentation Window -->
+  <div class="window" id="experimentationWindow">
+    <div class="window-header">
+      <span>Lab</span>
+      <button onclick="closeWindow('experimentationWindow')">✕</button>
+    </div>
+    <div class="window-content">
+      <div class="image-grid">
+        <img src="assets/experimentation/exp1.png" alt="Experiment 1" />
+        <img src="assets/experimentation/exp2.png" alt="Experiment 2" />
+        <img src="assets/experimentation/exp3.png" alt="Experiment 3" />
+        <img src="assets/experimentation/exp4.png" alt="Experiment 4" />
+        <img src="assets/experimentation/exp5.png" alt="Experiment 5" />
+        <img src="assets/experimentation/exp6.png" alt="Experiment 6" />
+        <img src="assets/experimentation/exp7.png" alt="Experiment 7" />
+      </div>
+    </div>
+  </div>
+  <!-- Sketches Window -->
+  <div class="window" id="sketchesWindow">
+    <div class="window-header">
+      <span>sketches</span>
+      <button onclick="closeWindow('sketchesWindow')">✕</button>
+    </div>
+    <div class="window-content">
+      <div class="image-grid">
+        <img src="assets/Sketches/1.jpeg" alt="Sketch 1" />
+        <img src="assets/Sketches/2.png" alt="Sketch 2" />
+        <img src="assets/Sketches/3.png" alt="Sketch 3" />
+        <img src="assets/Sketches/4.png" alt="Sketch 4" />
+        <img src="assets/Sketches/5.png" alt="Sketch 5" />
+        <img src="assets/Sketches/6.png" alt="Sketch 6" />
+        <img src="assets/Sketches/7.png" alt="Sketch 7" />
+        <img src="assets/Sketches/8.png" alt="Sketch 8" />
+        <img src="assets/Sketches/9.png" alt="Sketch 9" />
+        <img src="assets/Sketches/10.png" alt="Sketch 10" />
+      </div>
+    </div>
+  </div>
+
+  <!-- About Window -->
+  <div class="window text-window" id="aboutWindow">
+    <div class="window-header">
+      <span>About</span>
+      <button onclick="closeWindow('aboutWindow')">✕</button>
+    </div>
+    <div class="window-content">
+      Hi, I'm Verdhan — an artist and designer exploring sound and form.
+    </div>
+  </div>
+
+  <!-- Notes Window -->
+  <div class="window text-window" id="notepadWindow">
+    <div class="window-header">
+      <span>Notes</span>
+      <button onclick="closeWindow('notepadWindow')">✕</button>
+    </div>
+    <div class="window-content">
+      <pre>
+Instagram: <a href="https://instagram.com/revival_wav" target="_blank">@revival_wav</a>
+Band: <a href="https://instagram.com/12aminparadise" target="_blank">12am in Paradise</a>
+      </pre>
+    </div>
+  </div>
+
+  <!-- Projects Window -->
+  <div class="window" id="projectsWindow">
+    <div class="window-header">
+      <span>Projects</span>
+      <button onclick="closeWindow('projectsWindow')">✕</button>
+    </div>
+    <div class="window-content projects-content">
+      <div class="project-card">
+        <img src="assets/projects/project2.png" alt="Project 1" />
+        <h4>Beauty Brand — “beauté”</h4>
+        <p>Logo, packaging, and social identity for a minimal skincare label.</p>
+        <button onclick="openProject('https://www.instagram.com/p/DKoHBAPSy6U/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==')">Open</button>
+      </div>
+      <div class="project-card">
+        <img src="assets/projects/project3.png" alt="Project 2" />
+        <h4>Melomania 2024</h4>
+        <p>Poster & event direction for the Western Music competition.</p>
+        <button onclick="openProject('https://linktoyourproject.com')">Open</button>
+      </div>
+      <div class="project-card">
+        <img src="assets/projects/project1.png" alt="Project 3" />
+        <h4>Illustration Series</h4>
+        <p>Digital art panels exploring rhythm and visual flow.</p>
+        <button onclick="openProject('https://instagram.com/revival_wav')">Open</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Taskbar & Start Menu ===== -->
+  <div class="taskbar">
+    <div class="start-btn" onclick="toggleStartMenu()">
+      <img src="assets/icons/icon-start.png" alt="Start" />
+    </div>
+    <div id="taskbarClock"></div>
+  </div>
+
+  <div class="start-menu" id="startMenu">
+    <h3>Verdhan OS</h3>
+    <div class="start-menu-item" onclick="openWindow('artWindow')">
+      <img src="assets/icons/icon-art.png" alt="Art" /> Art
+    </div>
+    <div class="start-menu-item" onclick="openWindow('experimentationWindow')">
+      <img src="assets/icons/icon-experiment.png" alt="Lab" /> Lab
+    </div>
+    <div class="start-menu-item" onclick="openWindow('aboutWindow')">
+      <img src="assets/icons/icon-about.png" alt="About" /> About
+    </div>
+    <div class="start-menu-item" onclick="openWindow('notepadWindow')">
+      <img src="assets/icons/icon-notepad.png" alt="Notes" /> Notes
+    </div>
+    <hr />
+    <div class="start-menu-item" onclick="openWindow('projectsWindow')">
+      <img src="assets/icons/icon-projects.png" alt="Projects" /> Projects
+    </div>
+    <div class="start-menu-item">
+      <img src="assets/icons/icon-link-social.png" alt="Links" /> Links
+    </div>
+    <div class="start-menu-item">
+      <img src="assets/icons/icon-about.png" alt="Prefs" /> Prefs
+    </div>
+  </div>
+
+  <!-- ===== Scripts ===== -->
+  <script src="script.js"></script>
+</body>
+</html>
